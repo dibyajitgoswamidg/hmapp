@@ -1,23 +1,16 @@
-<% if current_user.present? %>
-  <div class="container">
-  <% @user.each do |f| %>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Email</th>
-      <th>Edit</th>
-    </tr>
-    <tr>
-      <td><%= f.id %></td>
-      <td><%= f.email %></td>
-      <td><%= link_to 'Edit', edit_user_registration_path %></td>
-      <td><%= link_to 'Delete', admin_destroy_user_path(f.id), :method => :delete, data: { confirm: "Are you sure you want to permanently delete this user?" } %></td>
-    </tr>
-  </table>
-  <% end %>
-  <%= link_to 'New User', new_user_registration_path %>
-  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-  </div>
-<% else %>
-  <% render new_user_registration_path %>
+<% @user.each do |f| %>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <td><%= f.id %></td>
+    <td><%= f.email %></td>
+    <td><%= link_to 'Edit', edit_user_registration_path %></td>
+    <td><%= link_to 'Delete', admin_destroy_user_path(f.id), :method => :delete, data: { confirm: "Are you sure you want to permanently delete this user?" } %></td>
+  </tr>
+</table>
 <% end %>
+<%= link_to 'New User', new_user_registration_path %>

@@ -1,0 +1,14 @@
+<div class="form-group">
+  <%= form_for employee_index_path, method: 'post' do |f| %>
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="name">Employee Type Name:</label>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="col-sm-12">
+        <br>
+        <%= f.submit "Add Employee Type", class: 'btn btn-primary expanded-button' %>
+      </div>
+    </div>
+  <% end %>
+</div>

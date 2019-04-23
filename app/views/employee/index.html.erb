@@ -1,0 +1,20 @@
+<h3>Employee</h3>
+<%= render partial: "index" %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <div class="table-scrollable">
+  <tbody>
+  <% @employees.each do |f| %>
+    <tr>
+      <td><%= f.id %></td>
+      <td><%= f.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  </div>
+</table>

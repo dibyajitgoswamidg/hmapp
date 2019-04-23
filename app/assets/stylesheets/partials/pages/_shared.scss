@@ -1,0 +1,79 @@
+h1, h3, h4{
+  font-weight: 300;
+  color: #333;
+  text-align: left;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+td{
+  font-size: 12px;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+.fa-spacing{
+  padding: 0 5px;
+}
+.workspace-div{
+  padding: 10px
+}
+.logo{
+  font-weight: 300;
+  color: #81ecec !important;
+  font-family: 'Comfortaa', cursive;
+}
+.navbar-nav {
+  flex-direction: row !important;
+}
+.nav-icon-li{
+  padding: 0 10px;
+  color: #81ecec !important;
+}
+.navbar{
+  background: #34495e;
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+.vertical-menu {
+  position: fixed;
+  min-height: 100%;
+  min-width: 16.66667%;
+  background: #ecf0f1;
+  a {
+    color: #333;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    &:hover {
+      background-color: #dfe6e9;
+    }
+    &.active {
+      background-color: #dfe6e9;
+    }
+  }
+  i {
+    padding: 0 10px;
+    color: #333;
+    width: 40px;
+    text-align: center;
+  }
+}
+
+.vertical-menu-width{
+  padding: 0px !important;
+}
+.form-control{
+  margin-bottom: 6px !important;
+}
+.container-fluid-margin{
+  margin-top: 56px;
+}
+.expanded-button{
+  width: 100%;
+}

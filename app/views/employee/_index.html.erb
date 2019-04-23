@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-6">
+    <%= render "form" %>
+  </div>
+  <div class="col-sm-6">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Index</th>
+        <th>Name</th>
+      </tr>
+      </thead>
+      <div class="table-scrollable">
+      <tbody>
+      <% @employee_types.each do |f| %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.name %></td>
+        </tr>
+      <% end %>
+      </tbody>
+      </div>
+    </table>
+  </div>
+</div>

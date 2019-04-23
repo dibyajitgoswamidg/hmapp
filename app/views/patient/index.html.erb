@@ -1,0 +1,32 @@
+<h3>Patients</h3>
+<%= render "form" %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Pincode</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <div class="table-scrollable">
+  <tbody>
+  <% @patients.each do |f| %>
+    <tr>
+      <td><%= f.first_name %> <%= f.last_name %></td>
+      <td><%= gender(f.gender) %></td>
+      <td><%= f.contact_number %></td>
+      <td><%= f.address_line %>, <%= f.city %></td>
+      <td><%= f.state %></td>
+      <td><%= f.country %></td>
+      <td><%= f.pincode %></td>
+      <td><%= f.email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  </div>
+</table>

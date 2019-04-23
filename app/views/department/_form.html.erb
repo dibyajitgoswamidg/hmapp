@@ -1,0 +1,14 @@
+<div class="form-group">
+  <%= form_for department_index_path, method: 'post' do |f| %>
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="name">Department Name:</label>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="col-sm-6">
+        <br>
+        <%= f.submit "Add Department", class: 'btn btn-primary expanded-button' %>
+      </div>
+    </div>
+  <% end %>
+</div>

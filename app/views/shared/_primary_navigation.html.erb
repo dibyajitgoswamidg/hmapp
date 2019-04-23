@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand logo" href="<%= root_path %>">HM System</a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li>
+       <%= link_to edit_user_registration_path do %>
+         <i class="fas fa-user nav-icon-li"></i>
+       <% end %>
+     </li>
+     <li>
+       <%= link_to destroy_user_session_path, :method => :delete do %>
+         <i class="fas fa-power-off nav-icon-li"></i>
+       <% end %>
+     </li>
+   </ul>
+   </div>
+ </nav>

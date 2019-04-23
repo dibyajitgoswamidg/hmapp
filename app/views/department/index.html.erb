@@ -1,0 +1,20 @@
+<h3>Departments</h3>
+<%= render "form" %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <div class="table-scrollable">
+  <tbody>
+  <% @departments.each do |f| %>
+    <tr>
+      <td><%= f.id %></td>
+      <td><%= f.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  </div>
+</table>

@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HospitalManagementApp</title>
+    <title>HMS - Hospital Management System</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'shared/headers' %>
   </head>
-
   <body>
-    <%= yield %>
+    <% if current_user.present? %>
+      <%= render 'shared/primary_navigation' %>
+      <div class="container-fluid container-fluid-margin">
+        <div class="row">
+          <div class="col-sm-2 vertical-menu-width">
+            <%= render "shared/feature_navigation" %>
+          </div>
+          <div class="col-sm-10 workspace-div">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <%= render 'devise/sessions/new' %>
+    <% end %>
   </body>
 </html>
