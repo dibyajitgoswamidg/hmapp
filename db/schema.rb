@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_205510) do
+ActiveRecord::Schema.define(version: 2019_04_25_174022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 2019_04_19_205510) do
     t.index ["patient_entry_id"], name: "index_doctor_appointment_sheets_on_patient_entry_id"
   end
 
+  create_table "duty_entities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "duty_sheets", force: :cascade do |t|
     t.date "date"
     t.time "start_time"
@@ -78,6 +84,10 @@ ActiveRecord::Schema.define(version: 2019_04_19_205510) do
     t.bigint "employee_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender"
+    t.string "govt_id_type"
+    t.string "govt_id"
+    t.string "state"
     t.index ["employee_type_id"], name: "index_employees_on_employee_type_id"
   end
 
@@ -127,6 +137,8 @@ ActiveRecord::Schema.define(version: 2019_04_19_205510) do
     t.string "govt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["contact_number"], name: "patient_registrations_contact_number_key", unique: true
+    t.index ["email"], name: "patient_registrations_email_key", unique: true
   end
 
   create_table "test_reports", force: :cascade do |t|

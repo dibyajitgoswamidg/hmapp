@@ -68,12 +68,18 @@ body{
 .vertical-menu-width{
   padding: 0px !important;
 }
-.form-control{
-  margin-bottom: 6px !important;
-}
 .container-fluid-margin{
   margin-top: 56px;
 }
 .expanded-button{
   width: 100%;
+}
+.row.button-inline-align > div {
+    margin-bottom: 6px;
+}
+.button-inline-align{
+  align-items: flex-end;
+}
+.option-header{
+  margin-bottom: 15px;
 }

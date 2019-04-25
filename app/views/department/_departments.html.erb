@@ -1,14 +1,16 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Employee Types</th>
+    <th>Departments</th>
   </tr>
   </thead>
+  <div class="table-scrollable">
   <tbody>
-  <% @employee_types.each do |f| %>
+  <% @departments.each do |f| %>
     <tr>
       <td><%= f.name %></td>
     </tr>
   <% end %>
   </tbody>
+  </div>
 </table>

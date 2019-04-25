@@ -1,20 +1,36 @@
 <h3>Employee</h3>
-<%= render partial: "index" %>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Index</th>
-    <th>Name</th>
-  </tr>
-  </thead>
-  <div class="table-scrollable">
-  <tbody>
-  <% @employees.each do |f| %>
-    <tr>
-      <td><%= f.id %></td>
-      <td><%= f.name %></td>
-    </tr>
-  <% end %>
-  </tbody>
+<div class="row">
+  <div class="col-sm-2 option-header">
+    <%= render "new_employee_form" %>
   </div>
-</table>
+  <div class="col-sm-2 option-header">
+    <%= render "form" %>
+  </div>
+  <div class="col-sm-10">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Profession</th>
+        <th>Gender</th>
+        <th>Contact</th>
+        <th>Address</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @employees.each do |f| %>
+        <tr>
+          <td><%= f.first_name %> <%= f.last_name %></td>
+          <td><%= @employee_types.find(f.employee_type_id).name %></td>
+          <td><%= gender(f.gender) %></td>
+          <td><%= f.contact_number %>, <%= f.alternate_contact_number %></td>
+          <td><%= f.address_line %>, <%= f.city %>, <%= f.country %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-2">
+    <%= render partial: "index" %>
+  </div>
+</div>
