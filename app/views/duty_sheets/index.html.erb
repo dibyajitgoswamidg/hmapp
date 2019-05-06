@@ -1,0 +1,24 @@
+<h3>Duties</h3>
+<div class="row option-header">
+  <div class="col-sm-2">
+    <%= render :partial => 'duty_entities/form' %>
+  </div>
+  <div class="col-sm-2">
+    <%= render :partial => 'shifts/form' %>
+  </div>
+  <div class="col-sm-2">
+    <%= render :partial => 'groups/form' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2">
+      <%= render :partial => 'duty_entities/duty_entity' %>
+  </div>
+  <div class="col-sm-10">
+      <%= render :partial => 'shifts/shifts' %>
+      <%= render :partial => 'groups/groups' %>
+  </div>
+  <div class="col-sm-5">
+      <div id="calendar"></div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_25_174022) do
+ActiveRecord::Schema.define(version: 2019_04_29_070743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,11 @@ ActiveRecord::Schema.define(version: 2019_04_25_174022) do
     t.bigint "ward_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "group_id"
+    t.bigint "duty_entity_id"
+    t.index ["duty_entity_id"], name: "index_duty_sheets_on_duty_entity_id"
     t.index ["employee_id"], name: "index_duty_sheets_on_employee_id"
+    t.index ["group_id"], name: "index_duty_sheets_on_group_id"
     t.index ["ward_id"], name: "index_duty_sheets_on_ward_id"
   end
 
@@ -88,7 +92,21 @@ ActiveRecord::Schema.define(version: 2019_04_25_174022) do
     t.string "govt_id_type"
     t.string "govt_id"
     t.string "state"
+    t.bigint "group_id"
     t.index ["employee_type_id"], name: "index_employees_on_employee_type_id"
+    t.index ["group_id"], name: "index_employees_on_group_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "employee_type_id"
+    t.bigint "shift_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_type_id"], name: "index_groups_on_employee_type_id"
+    t.index ["shift_id"], name: "index_groups_on_shift_id"
   end
 
   create_table "medicines", force: :cascade do |t|
@@ -139,6 +157,17 @@ ActiveRecord::Schema.define(version: 2019_04_25_174022) do
     t.datetime "updated_at", null: false
     t.index ["contact_number"], name: "patient_registrations_contact_number_key", unique: true
     t.index ["email"], name: "patient_registrations_email_key", unique: true
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.string "name"
+    t.time "start_time"
+    t.time "end_time"
+    t.boolean "split"
+    t.integer "split_hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.time "split_start"
   end
 
   create_table "test_reports", force: :cascade do |t|

@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Duty Entities</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @duty_entities.each do |f| %>
+    <tr>
+      <td><%= f.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
