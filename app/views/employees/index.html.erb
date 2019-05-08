@@ -4,7 +4,7 @@
     <%= render "new_employee_form" %>
   </div>
   <div class="col-sm-2">
-    <%= render "form" %>
+    <%= render "employee_types/form" %>
   </div>
 </div>
 <div class="row">
@@ -17,6 +17,8 @@
         <th>Gender</th>
         <th>Contact</th>
         <th>Address</th>
+        <th>Group</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -27,12 +29,14 @@
           <td><%= gender(f.gender) %></td>
           <td><%= f.contact_number %>, <%= f.alternate_contact_number %></td>
           <td><%= f.address_line %>, <%= f.city %>, <%= f.country %></td>
+          <td><%= @groups.find(f.group_id).name %></td>
+          <td><%= link_to 'Edit', edit_employee_path(f.id) %>
         </tr>
       <% end %>
       </tbody>
     </table>
   </div>
   <div class="col-sm-2">
-    <%= render partial: "index" %>
+    <%= render partial: "employee_types/index" %>
   </div>
 </div>

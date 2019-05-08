@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root 'dashboard#index'
   delete 'users/:id' => 'users#destroy', :as => :admin_destroy_user
 
-  resources :patient, only: [:new, :create, :index]
-  resources :department, only: [:new, :create, :index]
-  resources :employee, only: [:new, :create, :index]
+  resources :patient_registrations, only: [:new, :create, :index]
+  resources :departments, only: [:new, :create, :index]
+  resources :employees, only: [:new, :create, :index, :edit, :update]
+  resources :employee_types, only: [:new, :create, :index, :edit, :update]
   resources :shifts, only: [:new, :create, :index]
   resources :duty_entities, only: [:new, :create, :index]
   resources :duty_sheets, only: [:new, :create, :index]

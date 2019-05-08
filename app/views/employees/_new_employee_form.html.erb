@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <%= form_for employee_index_path, method: 'post' do |f| %>
+          <%= form_for @employee, method: 'post' do |f| %>
             <div class="row button-inline-align">
               <div class="col-sm-3">
                 <label for="employee_type">Employee Type:</label><br>
@@ -66,7 +66,11 @@
                 <label for="govt_id">Govt ID:</label>
                 <%= f.text_field :govt_id, class: 'form-control' %>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-3">
+                <label for="group_id">Group:</label><br>
+                <%= f.select :group_id, options_from_collection_for_select(@groups, 'id', 'name'), {}, class: 'form-control' %>
+              </div>
+              <div class="col-sm-3">
                 <br>
                 <%= f.submit "Create", class: 'btn btn-primary expanded-button' %>
               </div>

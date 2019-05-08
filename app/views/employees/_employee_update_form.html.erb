@@ -1,0 +1,70 @@
+<div class="form-group">
+  <%= form_for @employee do |f| %>
+    <div class="row button-inline-align">
+      <div class="col-sm-3">
+        <label for="employee_type">Employee Type:</label><br>
+        <%= f.select :employee_type_id, options_from_collection_for_select(@employee_types, 'id', 'name', {:selected => f.object.employee_type_id}), {}, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="first_name">First Name:</label>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="last_name">Last Name:</label>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="gender">Gender:</label><br>
+        <%= f.select :gender, options_for_select([["Male", 1], ["Female", 2], ["Others", 3]], :selected => f.object.gender), {}, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="contact_number">Contact Number:</label>
+        <%= f.text_field :contact_number, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="alternate_contact_number">Alternate Contact:</label>
+        <%= f.text_field :alternate_contact_number, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="email">Email:</label>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="address_line">Address Line:</label>
+        <%= f.text_field :address_line, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="city">City:</label>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="state">State:</label>
+        <%= f.text_field :state, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="country">Country:</label>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="pincode">Pincode:</label>
+        <%= f.text_field :pincode, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="govt_id_type">Govt ID Type:</label><br>
+        <%= f.select :govt_id_type, options_for_select([["License", 1], ["Passport", 2], ["Aadhar", 3]], :selected => f.object.govt_id_type), {}, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="govt_id">Govt ID:</label>
+        <%= f.text_field :govt_id, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <label for="group_id">Group:</label><br>
+        <%= f.select :group_id, options_from_collection_for_select(@groups, 'id', 'name', {:selected => f.object.group_id}), {}, class: 'form-control' %>
+      </div>
+      <div class="col-sm-3">
+        <br>
+        <%= f.submit "Update", class: 'btn btn-primary expanded-button' %>
+      </div>
+    </div>
+  <% end %>
+</div>
